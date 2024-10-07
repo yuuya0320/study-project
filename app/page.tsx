@@ -10,14 +10,17 @@ export default function Home() {
   const handleTranslate = async () => {
     try {
       // PythonバックエンドにPOSTリクエストを送信
-      const response = await fetch("http://localhost:5000/translate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        // 入力テキストを送信
-        body: JSON.stringify({ text: inputText }),
-      });
+      const response = await fetch(
+        "https://thawing-dusk-43676-eb890e8ae523.herokuapp.com/translate",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          // 入力テキストを送信
+          body: JSON.stringify({ text: inputText }),
+        }
+      );
 
       // レスポンスのステータスコードを確認
       if (!response.ok) {
